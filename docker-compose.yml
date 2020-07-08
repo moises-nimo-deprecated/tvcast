@@ -30,19 +30,19 @@ services:
         # links: 
         #     - tv-cast-db
 
-    # Main API Tv Maze Consumption/Provision
-    # tv-cast-api:
-    #     image: mcr.microsoft.com/dotnet/core/sdk:3.1
-    #     container_name: tv-cast-api
-    #     hostname: tvcast.api.local
-    #     working_dir: /api/
-    #     command: dotnet ./TvCast.Api.dll
-    #     restart: always
-    #     environment: 
-    #         ASPNETCORE_URLS: http://*:8000
-    #     ports: 
-    #         - "8000:8000"
-    #     volumes: 
-    #         - ./TvCast.Api/wwwroot/api/:/api/
-    #     links: 
-    #         - tv-cast-db
+    Main API Tv Maze Consumption/Provision
+    tv-cast-api:
+        image: mcr.microsoft.com/dotnet/core/sdk:3.1
+        container_name: tv-cast-api
+        hostname: tvcast.api.local
+        working_dir: /api/
+        command: dotnet ./TvCast.Api.dll
+        restart: always
+        environment: 
+            ASPNETCORE_URLS: http://*:8000
+        ports: 
+            - "8000:8000"
+        volumes: 
+            - ./TvCast.Api/wwwroot/api/:/api/
+        links: 
+            - tv-cast-db
