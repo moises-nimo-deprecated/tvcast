@@ -1,0 +1,48 @@
+version: '3.1'
+services: 
+    # Maria DB Database for the application
+    # tv-cast-db:
+    #     image: mariadb:10.3
+    #     container_name: tv-cast-db
+    #     volumes: 
+    #         - ./TvCast.Database/sql/:/sql/
+    #     ports: 
+    #         - "3306:3306"
+    #     environment: 
+    #         - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    #         - MYSQL_DATABASE=tvcast
+    #         - MYSQL_USER=tvcast
+    #         - MYSQL_PASSWORD=tvc4st
+
+    # Main API Tv Maze Consumption/Provision
+    tv-cast-worker:
+        image: mcr.microsoft.com/dotnet/core/sdk:3.1
+        container_name: tv-cast-worker
+        working_dir: /worker/
+        command: dotnet ./TvCast.Worker.dll
+        restart: always
+        environment: 
+            ASPNETCORE_URLS: http://*:8000
+        ports: 
+            - "8000:8000"
+        volumes: 
+            - ./wwwroot/worker/:/worker/
+        # links: 
+        #     - tv-cast-db
+
+    # Main API Tv Maze Consumption/Provision
+    # tv-cast-api:
+    #     image: mcr.microsoft.com/dotnet/core/sdk:3.1
+    #     container_name: tv-cast-api
+    #     hostname: tvcast.api.local
+    #     working_dir: /api/
+    #     command: dotnet ./TvCast.Api.dll
+    #     restart: always
+    #     environment: 
+    #         ASPNETCORE_URLS: http://*:8000
+    #     ports: 
+    #         - "8000:8000"
+    #     volumes: 
+    #         - ./TvCast.Api/wwwroot/api/:/api/
+    #     links: 
+    #         - tv-cast-db
