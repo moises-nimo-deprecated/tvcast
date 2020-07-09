@@ -21,7 +21,8 @@ The models and entities are self explanatory.
 * The cycle for the worker is set to 3s to avoid blockage on the tvmaze api, otherwise it'll throw 403.  
 * `Install NodeJS 10+ in order to perform tasks automatically.`  
 * `The solution is supposed to run on Docker, to make it easier to deploy tagged images into azure containers.` 
-* `There are unit tests only for the Repositories using Moq`.
+* `There are unit tests only for the Repositories using Moq`. 
+* `Some actors don't have birthday due to tvmaze missing data`.
 
 # Running on Docker  
 Requires `Docker Toolbox` or `Docker For Windows - Linux Containers` installed
