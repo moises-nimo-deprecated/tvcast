@@ -1,12 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCast.Worker", "TvCast.Worker\TvCast.Worker.csproj", "{D0B93687-800E-47A0-B559-F7941CB76B28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCast.ApiWorker", "TvCast.ApiWorker\TvCast.ApiWorker.csproj", "{D0B93687-800E-47A0-B559-F7941CB76B28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCast.Api", "TvCast.Api\TvCast.Api.csproj", "{4F4E1DD9-C6C2-44EC-8910-7335A0BA5880}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCast.Domain", "TvCast.Domain\TvCast.Domain.csproj", "{ED28A70A-38F5-4E2D-BAB9-26D4A749F3FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCast.Entity", "TvCast.Entity\TvCast.Entity.csproj", "{6DF000B3-DCCD-4312-A629-DD00674F826E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvCast.Tests", "TvCast.Tests\TvCast.Tests.csproj", "{DB5B8EF2-8623-47BB-982A-B77CCBE17695}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +32,9 @@ Global
 		{6DF000B3-DCCD-4312-A629-DD00674F826E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DF000B3-DCCD-4312-A629-DD00674F826E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DF000B3-DCCD-4312-A629-DD00674F826E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB5B8EF2-8623-47BB-982A-B77CCBE17695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5B8EF2-8623-47BB-982A-B77CCBE17695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5B8EF2-8623-47BB-982A-B77CCBE17695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5B8EF2-8623-47BB-982A-B77CCBE17695}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

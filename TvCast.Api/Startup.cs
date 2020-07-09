@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using TvCast.Domain;
+using TvCast.Entity;
 
 namespace TvCast.Api
 {
@@ -26,6 +28,8 @@ namespace TvCast.Api
                     Description = "Proof of Concept for a Tv Cast Web Service"
                 });
             });
+            services.AddDataLayer(Configuration);
+            services.AddDomainLayer(Configuration);
             services.AddControllers();
         }
 

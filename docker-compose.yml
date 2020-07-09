@@ -1,20 +1,18 @@
 version: '3.1'
 services: 
-    # Maria DB Database for the application
-    # tv-cast-db:
-    #     image: mariadb:10.3
-    #     container_name: tv-cast-db
-    #     volumes: 
-    #         - ./TvCast.Database/sql/:/sql/
-    #     ports: 
-    #         - "3306:3306"
-    #     environment: 
-    #         - MYSQL_ALLOW_EMPTY_PASSWORD=true
-    #         - MYSQL_DATABASE=tvcast
-    #         - MYSQL_USER=tvcast
-    #         - MYSQL_PASSWORD=tvc4st
+    # Storage Emulator
+    tv-cast-db:
+        image: postgres:latest
+        container_name: tv-cast-db
+        environment:
+            POSTGRES_USER: tvcast
+            POSTGRES_PASSWORD: tvc4st
+        volumes: 
+            - ./Database/:/sql/
+        ports: 
+            - "5432:5432"
 
-    # Main API Tv Maze Consumption/Provision
+    # Main API Tv Maze Consumption
     tv-cast-worker:
         image: mcr.microsoft.com/dotnet/core/sdk:3.1
         container_name: tv-cast-worker
@@ -27,10 +25,10 @@ services:
             - "8000:8000"
         volumes: 
             - ./wwwroot/worker/:/worker/
-        # links: 
-        #     - tv-cast-db
+        links: 
+            - tv-cast-db
 
-    Main API Tv Maze Consumption/Provision
+    # Main API Tv Maze Consumption/Provision
     tv-cast-api:
         image: mcr.microsoft.com/dotnet/core/sdk:3.1
         container_name: tv-cast-api
