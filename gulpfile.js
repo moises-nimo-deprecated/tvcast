@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const shell = require('gulp-shell');
+const { series } = require('gulp');
 
 function startDb() {
     return gulp.src(__filename)
@@ -22,7 +23,7 @@ function build() {
 
 function publishWorker() {
     return gulp.src(__filename)
-        .pipe(shell(['dotnet publish TvCast.Worker -o ./wwwroot/worker']));
+        .pipe(shell(['dotnet publish TvCast.ApiWorker -o ./wwwroot/worker']));
 }
 
 function publishApi() {

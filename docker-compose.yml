@@ -17,12 +17,8 @@ services:
         image: mcr.microsoft.com/dotnet/core/sdk:3.1
         container_name: tv-cast-worker
         working_dir: /worker/
-        command: dotnet ./TvCast.Worker.dll
+        command: dotnet ./TvCast.ApiWorker.dll
         restart: always
-        environment: 
-            ASPNETCORE_URLS: http://*:8000
-        ports: 
-            - "8000:8000"
         volumes: 
             - ./wwwroot/worker/:/worker/
         links: 
