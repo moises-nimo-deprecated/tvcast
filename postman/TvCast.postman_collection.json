@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "1ecac5bd-0f91-4ffc-b716-9b7f15622338",
+		"name": "TvCast",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shows",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/shows?page=1&pageSize=10",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shows"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

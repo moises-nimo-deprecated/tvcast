@@ -37,6 +37,6 @@ services:
         ports: 
             - "8000:8000"
         volumes: 
-            - ./TvCast.Api/wwwroot/api/:/api/
+            - ./wwwroot/api/:/api/
         links: 
             - tv-cast-db

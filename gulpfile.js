@@ -33,12 +33,17 @@ function publishApi() {
 
 function startApi() {
     return gulp.src(__filename)
-        .pipe(shell(['docker-compose up -d tv-cast-worker']));
+        .pipe(shell(['docker-compose up -d tv-cast-api']));
 }
 
 function startWorker() {
     return gulp.src(__filename)
-        .pipe(shell(['docker-compose up -d tv-cast-api']));
+        .pipe(shell(['docker-compose up -d tv-cast-worker']));
+}
+
+function logsWorker() {
+    return gulp.src(__filename)
+        .pipe(shell(['docker-compose logs tv-cast-worker']));
 }
 
 exports.startDb = startDb;
@@ -48,5 +53,6 @@ exports.publishWorker = publishWorker;
 exports.publishApi = publishApi;
 exports.startApi = startApi;
 exports.startWorker = startWorker;
+exports.logsWorker = logsWorker;
 
 exports.default = series(startDb, build, publishWorker, publishApi, ddlDbCreate, startApi, startWorker);
