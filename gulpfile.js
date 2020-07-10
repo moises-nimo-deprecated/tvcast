@@ -48,6 +48,16 @@ function logs() {
         .pipe(shell(['docker-compose logs tv-cast-worker']));
 }
 
+function stop(){
+    return gulp.src(__filename)
+        .pipe(shell(['docker-compose down']));
+}
+
+function down(){
+    return gulp.src(__filename)
+        .pipe(shell(['docker-compose down']));
+}
+
 exports.startDb = startDb;
 exports.ddlDbCreate = ddlDbCreate;
 exports.build = build;
@@ -56,5 +66,7 @@ exports.publishApi = publishApi;
 exports.startApi = startApi;
 exports.startWorker = startWorker;
 exports.logs = logs;
+exports.stop = stop;
+exports.down = down;
 
 exports.default = series(startDb, build, publishWorker, publishApi, ddlDbCreate, startApi, startWorker);

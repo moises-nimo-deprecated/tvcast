@@ -48,3 +48,15 @@ Just issue the following command in a shell under the project folder:
 ```
 gulp logs
 ```
+
+## Stop Containers  
+If you want to stop the containers just issue the command:  
+```
+gulp stop
+```
+
+## Destroy the Containers 
+To completely destroy the containers.
+```
+gulp down
+```
