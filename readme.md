@@ -11,6 +11,13 @@ Domain library to translate entities to the view engines.
 ## TvCast.Entity  
 Entity Frameowkr 6 project to perform data access operations.
 
+## Requirements
+* NodeJS for gulp tasks : https://nodejs.org/en/  
+* Docker Toolbox for testing in containers: https://github.com/docker/toolbox/releases  
+* `dotnet 3.1` installed and available. Run the command `dotnet --info`: https://dotnet.microsoft.com/download/dotnet-core/3.1  
+* Postman to test the environments: https://www.postman.com/  
+
+
 
 ## Obs  
 The models and entities are self explanatory.  
@@ -25,7 +32,6 @@ The models and entities are self explanatory.
 * `Some actors don't have birthday due to tvmaze missing data`.
 
 # Running on Docker  
-Requires `Docker Toolbox` or `Docker For Windows - Linux Containers` installed
 On the parent solution folder perform the commands:  
 `Attention: NodeJS installation is required for running gulp`.
 ```
