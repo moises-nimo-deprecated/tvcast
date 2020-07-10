@@ -41,3 +41,10 @@ Import the files:
 * `docker.postman_environment.json`
 
 `WARNING: the docker.postman_environment.json is pointing to the ip 192.168.99.101, change it to your docker-machine ip instead`'.
+
+## Check what's going on  
+It's simple to see what's up within the containers  
+Just issue the following command in a shell under the project folder: 
+```
+gulp logs
+```
